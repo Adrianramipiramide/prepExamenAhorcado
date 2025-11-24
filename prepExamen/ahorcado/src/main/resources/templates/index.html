@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Partidas</title>
+</head>
+<body>
+<h1>Ahorcado</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Fecha</th>
+            <th>Ganada</th>
+            <th>Fallos</th>
+            <th>Nombre Usuario</th>
+            <th>Palabra</th>
+        </tr>
+        <tr th:each="partida:${partidas}">
+            <td th:text="${partida.id}"></td>
+            <td th:text="${partida.fechaHora}"></td>
+            <td th:text="${partida.ganada}"></td>
+            <td th:text="${partida.numFallos}"></td>
+            <td th:text="${partida.nombreUsuario}"></td>
+            <td th:text="${partida.idPalabra}"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -11,6 +11,7 @@ import java.time.LocalDate;
 public class DAOPalabraSQL implements DAOPalabra{
     @Override
     public Boolean comprobarLetra(String letra,String palabra) {
+        Boolean correcta = false;
         String consulta = "select palabra from Palabra where palabra = ? AND palabra LIKE ?";
 
         try{
@@ -19,16 +20,13 @@ public class DAOPalabraSQL implements DAOPalabra{
             statement.setString(2,'%'+letra+'%');
             ResultSet rs = statement.executeQuery();
             while (rs.next()){
-
+                correcta= true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-
-
-
-        return null;
+        return correcta;
     }
 
     @Override

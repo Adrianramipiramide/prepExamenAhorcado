@@ -72,4 +72,16 @@ public class Partida {
     public void setIdPalabra(Integer idPalabra) {
         this.idPalabra = idPalabra;
     }
+
+    @Override
+    public String toString() {
+        return "Partida{" +
+                "id=" + id +
+                ", fechaHora=" + fechaHora +
+                ", ganada=" + ganada +
+                ", numFallos=" + numFallos +
+                ", nombreUsuario='" + nombreUsuario + '\'' +
+                ", idPalabra=" + idPalabra +
+                '}';
+    }
 }
